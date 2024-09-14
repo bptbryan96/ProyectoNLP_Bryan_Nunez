@@ -38,11 +38,11 @@ Se aplicó la lematización para transformar las palabras en su forma base o lem
 <div style="display: flex; justify-content: space-around; align-items: center;">
 
   <div style="text-align: center;">
-    <img src="./images/nubeOriginal.png" alt="Imagen 1" style="width: 300px; height: auto;">
+    <img src="./images/nubeOriginal.png" alt="Imagen 1" style="width: 600px; height: auto;">
   </div>
 
   <div style="text-align: center;">
-    <img src="./images/nubePrepo.png" alt="Imagen 2" style="width: 300px; height: auto;">
+    <img src="./images/nubePrepo.png" alt="Imagen 2" style="width: 600px; height: auto;">
   </div>
 
 </div>
@@ -75,33 +75,72 @@ El entrenamiento del modelo SentimentGRU se llevó a cabo utilizando el optimiza
 #### 1. RNN (Red Neuronal Recurrente Simple)
 Análisis: El modelo RNN tiene un rendimiento muy pobre en la detección de la clase "No Acusatoria" con un recall de solo 0.22, lo que sugiere que no está identificando correctamente muchas instancias de esta clase. Sin embargo, para la clase "Acusatoria", tiene un recall de 0.83, aunque la precisión es extremadamente baja (0.03), lo que indica un alto número de falsos positivos. El F1-score es muy bajo para ambas clases, lo que refleja un desempeño deficiente en general.
 
+<div style="text-align: center;">
+  <img src="./images/RNN_REPORTE.png" alt="Distribución de Frases Acusatorias" style="width: 500px; height: auto;" />
+</div>
+
 #### 2. LSTM (Long Short-Term Memory)
 Análisis: El modelo LSTM tiene una mejor precisión en general (0.89), pero sigue teniendo problemas para detectar la clase "Acusatoria" con una precisión de solo 0.06 y un recall de 0.21. El F1-score es bajo para la clase "Acusatoria", lo que indica que, aunque el modelo mejora significativamente la detección de la clase "No Acusatoria", aún tiene dificultades para reconocer correctamente las instancias de la clase "Acusatoria".
+
+<div style="text-align: center;">
+  <img src="./images/LSTM_REPORTE.png" alt="Distribución de Frases Acusatorias" style="width: 500px; height: auto;" />
+</div>
 
 #### 3. GRU (Gated Recurrent Unit)
 Análisis: El modelo GRU presenta un rendimiento general superior, con una alta precisión (0.96) y F1-score para la clase "No Acusatoria" (0.98). Aunque la clase "Acusatoria" sigue siendo un desafío, el modelo logra una mejora en precisión (0.21) y F1-score (0.21), lo que lo hace el mejor de los tres modelos en términos de balance entre ambas clases.
 
+<div style="text-align: center;">
+  <img src="./images/GRU_REPORTE.png" alt="Distribución de Frases Acusatorias" style="width: 500px; height: auto;" />
+</div>
+
 ### Pérdida y presición durante el entrenamiento de los modelos
 #### 1. RNN (Red Neuronal Recurrente Simple)
 Pérdida vs Época: La pérdida comienza en torno a 0.68 y muestra una tendencia a aumentar hasta un pico cercano a 0.73 en las primeras 15 épocas. Luego de este aumento, la pérdida desciende gradualmente pero se mantiene algo inestable a lo largo del resto del entrenamiento, con fluctuaciones entre 0.69 y 0.70.
-####imagen####
 Precisión vs Época: La precisión muestra una considerable inestabilidad, comenzando en 0.51 y fluctuando entre 0.48 y 0.53 durante todo el proceso. No hay una tendencia clara de mejora a lo largo de las épocas, lo que sugiere que el modelo RNN no logra capturar patrones suficientes para mejorar consistentemente.
-####imagen####
+
+<div style="display: flex; justify-content: space-around; align-items: center;">
+
+  <div style="text-align: center;">
+    <img src="./images/RNN_LOSS.png" alt="Imagen 1" style="width: 600px; height: auto;">
+  </div>
+
+  <div style="text-align: center;">
+    <img src="./images/RNN_ACC.png" alt="Imagen 2" style="width: 600px; height: auto;">
+  </div>
+
+</div>
 
 #### 2. LSTM (Long Short-Term Memory)
 Pérdida vs Época: La pérdida comienza cerca de 0.70 y desciende rápidamente en las primeras 10 épocas, alcanzando un valor cercano a 0.2. Tras este descenso inicial, la pérdida sigue una tendencia a la baja pero de forma mucho más gradual, con una relativa estabilidad en torno a 0.15 a partir de la época 20.
-####imagen####
-
 Precisión vs Época: La precisión en LSTM también mejora de manera más significativa en comparación con RNN. Comienza en 0.50 y sube rápidamente a más de 0.90 en las primeras 10 épocas. Aunque hay algunas fluctuaciones menores, la precisión se mantiene cerca de 0.90-0.95 durante el resto del entrenamiento, lo que indica que el modelo está capturando adecuadamente las dependencias temporales.
-####imagen####
+
+<div style="display: flex; justify-content: space-around; align-items: center;">
+
+  <div style="text-align: center;">
+    <img src="./images/LSTM_LOSS.png" alt="Imagen 1" style="width: 600px; height: auto;">
+  </div>
+
+  <div style="text-align: center;">
+    <img src="./images/LST,_ACC.png" alt="Imagen 2" style="width: 600px; height: auto;">
+  </div>
+
+</div>
 
 #### 3. GRU (Gated Recurrent Unit)
 Pérdida vs Época: Similar a LSTM, la pérdida en GRU disminuye de manera rápida durante las primeras 10 épocas, comenzando cerca de 0.7 y alcanzando prácticamente cero al final del entrenamiento. La pérdida se estabiliza en un valor cercano a cero a partir de la época 20, indicando que el modelo está ajustándose de manera eficiente.
-####imagen####
-
 Precisión vs Época: En términos de precisión, el modelo GRU muestra una evolución muy destacada. Al igual que LSTM, la precisión aumenta rápidamente desde 0.50 hasta aproximadamente 1.0, y se mantiene casi constante en ese nivel desde la época 20 en adelante. Esto sugiere que el modelo está prácticamente sobreajustando el conjunto de entrenamiento, logrando una precisión casi perfecta.
 
-####imagen####
+<div style="display: flex; justify-content: space-around; align-items: center;">
+
+  <div style="text-align: center;">
+    <img src="./images/GRU_LOSS.png" alt="Imagen 1" style="width: 600px; height: auto;">
+  </div>
+
+  <div style="text-align: center;">
+    <img src="./images/GRU_ACC.png" alt="Imagen 2" style="width: 600px; height: auto;">
+  </div>
+
+</div>
 
 ### ROC AUC
 #### 1. RNN (Red Neuronal Recurrente Simple)
