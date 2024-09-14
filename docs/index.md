@@ -1,28 +1,13 @@
-# Starbucks Capstone Challenge
+# Clasificaciónn de frases del portal de compras públicas del Ecuador en acusatorio y NO acusatorio
 
-## Introduction
+## Introducciónn
 
-Starbucks has provided a dataset that emulates the behavior of
-customers using the Starbucks rewards mobile app. The Starbucks app
-provides a way to advertise and share offers with the
-customers. Customers can also use it to pay at the stores. Starbucks
-sends different types of advertisement and offers once every few days to their
-customers. A customer might get one of the following:
+En el ámbito de las compras públicas en Ecuador, la fase de preguntas y respuestas entre proveedores y entidades gubernamentales se presenta como una ventana hacia las dinámicas de interacción en estos procesos. Esta etapa es crucial, ya que permite identificar preocupaciones significativas que pueden incluir acusaciones de favoritismo o corrupción. Tales acusaciones, si no se gestionan correctamente, pueden socavar la integridad de todo el proceso de licitación.
+El desafío principal radica en la capacidad de clasificar de manera eficiente y precisa estas preguntas en categorías de acusatorias y no acusatorias. Actualmente, la clasificación manual no solo es ineficiente, sino también susceptible a sesgos y errores. En este contexto, la aplicación de tecnologías avanzadas de procesamiento de lenguaje natural, específicamente el uso de modelos de lenguaje como RNN, LSTM o GRU, promete mejorar significativamente la precisión y la velocidad de esta clasificación .
+Este estudio propone el desarrollo de un sistema automatizado que utiliza las 3 tecnicas anteriores mencionadas para la clasificación textual y ChatGPT para la generación de datos de entrenamiento adicionales, con el objetivo de crear un modelo robusto capaz de discernir entre comentarios acusatorios y no acusatorios en el contexto de las licitaciones públicas. La implementación de tal sistema no solo podría mejorar la eficiencia del proceso de revisión de preguntas y respuestas, sino también fortalecer la transparencia y la equidad en las compras públicas .
 
-- Informational offer (i.e., mere advertisement)
-- Discount offer
-- Buy one get one free (BOGO) offer
+![image](https://github.com/user-attachments/assets/dc40e603-3728-4e27-a78f-2a9276bd55f2)
 
-Discount and BOGO offers have a challenge, that is, the customer must
-make a minimum purchase before it can redeem the offer. Additionally,
-each offer has an expiration date. In the case of the informational
-offers, the expiration date is when the customer stop feeling the
-influence of the advertisement.
-
-The data provided includes the demographics of each customer, the app
-activity of customers for a period of 30 days. It includes the
-timestamps of when a costumer received, viewed and completed an offer,
-when a purchase was done, and the amount of money spent.
 
 
 ## Problem Statement
