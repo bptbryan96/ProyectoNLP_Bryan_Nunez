@@ -256,8 +256,13 @@ GRU es la Mejor Opción Global: En general, el modelo GRU es la mejor opción de
 
 ## REFERENCIAS
 [1] 	Y. Fang, X. Li, S. W. Thomas y X. Zhu, "ChatGPT as Data Augmentation for Compositional Generalization: A Case Study in Open Intent Detection," Proceedings of the Joint Workshop of the 5th Financial Technology and Natural Language Processing (FinNLP) and 2nd Multimodal AI For Financial Forecasting (Muffin), Macao, 2023.
+
 [2] 	H. Dai et al., "AugGPT: Leveraging ChatGPT for Text Data Augmentation," arXiv preprint arXiv:2302.13007v3, Mar. 2023.
+
 [3] 	OECD, "Generative Artificial Intelligence for Anti-Corruption and Integrity in Government," OECD Artificial Intelligence Papers, No. 12, Marzo 2024.
+
 [4] Llama, "Prompting - How-to Guides," Llama Documentation. [Online]. Available: https://www.llama.com/docs/how-to-guides/prompting/. [Accessed: 13-Sep-2024].
+
 [5] F. M. Shiri, T. Perumal, N. Mustapha, and R. Mohamed, "A Comprehensive Overview and Comparative Analysis on Deep Learning Models: CNN, RNN, LSTM, GRU," arXiv preprint, vol. 2305.17473v2, 2023. [Online]. Available: https://arxiv.org/abs/2305.17473v2. [Accessed: 13-Sep-2024].
+
 [6] S. A. Zargar, "Introduction to Sequence Learning Models: RNN, LSTM, GRU," Preprint, North Carolina State University, Apr. 2021. [Online]. Available: https://www.researchgate.net/publication/350950396. [Accessed: 13-Sep-2024].
