@@ -38,12 +38,10 @@ Se aplicó la lematización para transformar las palabras en su forma base o lem
 <div style="display: flex; justify-content: space-around; align-items: center;">
 
   <div style="text-align: center;">
-    <p>Conjunto de entrenamiento original</p>
     <img src="./images/nubeOriginal.png" alt="Imagen 1" style="width: 300px; height: auto;">
   </div>
 
   <div style="text-align: center;">
-    <p>Conjunto de entrenamiento pre-procesado</p>
     <img src="./images/nubePrepo.png" alt="Imagen 2" style="width: 300px; height: auto;">
   </div>
 
