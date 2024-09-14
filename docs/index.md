@@ -11,6 +11,9 @@ Este estudio propone el desarrollo de un sistema automatizado que utiliza las 3 
 Inicialmente, el conjunto de datos completo fue dividido en dos segmentos principales: un 80% (4004frases) destinado para el entrenamiento y un 20% (1001 frases) reservado para la prueba. Teniendo 3886 frases de la clase 'NO Acusatorio' y 118 frases de la clase 'Acusatoria'
 Dado el desequilibrio notable en la distribución de clases observado en el dataset, con una predominancia de frases no acusatorias, se implementó un proceso de aumento de datos para mejorar este desequilibrio. 
 
+<div style="text-align:center">
+<img src="./images/distriOriginal.png"/>
+</div>
 ####imagen####
 
 Se utilizó un metodo de promting y el modelo GPT-4o-mini de OpenAI, generamos 5027 nuevas frases acusatorias. Este enfoque aumentó significativamente el número de frases acusatorias, ayudando a mejorar el entrenamiento del modelo.
@@ -148,50 +151,15 @@ Problemas con la Clase Acusatoria: Todos los modelos presentaron dificultades no
 GRU es la Mejor Opción Global: En general, el modelo GRU es la mejor opción de los tres para esta tarea. Con una precisión y recall mucho más equilibrados entre ambas clases, y un accuracy general de 0.96, GRU es el modelo más robusto, especialmente en términos de minimizar falsos positivos en la clase "No Acusatoria" y ofrecer una mejor capacidad de detección de la clase "Acusatoria".
 
 
-
-
-
-
-
-
-
-
-
-
-
-## Data Analysis
-### Population
-
-From the datasets, we first note that the simulated data was obtained
-for a period of 29.75 days, with 306,534 events. Each event represents
-a transaction, an offer received, an offer viewed, or an offer
-completed.
-
 <div style="text-align:center">
 <img src="./images/population.png"/>
 </div>
 
-The figure shows the distribution of the population based on gender,
-income and age. We note that around 8,500 customers are male, 6,100
-are female and around 200 belong to other gender. In the case of the
-income, we observe that curve roughly approaches a normal curve with a
-mean around 65,000 and a standard deviation of 21,000. Finally, the
-age also seems to approach a normal distribution. It is truncated on
-the left side of the curve due to the fact that a customer must be 18
-years or older to be part of the Starbucks program. The mean of the
-age is 54 years and the standard deviation is 17.
-
-### Expense
 
 <div style="text-align:center">
 <img src="./images/expense.png"/>
 </div>
 
-Now, we observe that the average expense of a single transaction
-follows a bimodal distribution. The first lobe is centered around $2.5
-and the second one around $18. In the case of the distribution of the
-total expense done by a customer the values seems to decrease
-exponentially.
 
 <div style="text-align:center">
 <img src="./images/expense_gender.png"/>
