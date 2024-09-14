@@ -12,8 +12,9 @@ Inicialmente, el conjunto de datos completo fue dividido en dos segmentos princi
 Dado el desequilibrio notable en la distribución de clases observado en el dataset, con una predominancia de frases no acusatorias, se implementó un proceso de aumento de datos para mejorar este desequilibrio. 
 
 <div style="text-align:center">
-<img src="./images/distriOriginal.png"/>
+  <img src="./images/distriOriginal.png" alt="Imagen" style="width: 300px; height: auto;" />
 </div>
+
 ####imagen####
 
 Se utilizó un metodo de promting y el modelo GPT-4o-mini de OpenAI, generamos 5027 nuevas frases acusatorias. Este enfoque aumentó significativamente el número de frases acusatorias, ayudando a mejorar el entrenamiento del modelo.
