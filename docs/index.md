@@ -240,7 +240,7 @@ El gráfico TSNE del modelo GRU muestra una estructura de agrupamiento similar a
   <img src="./images/TESIS_ROCAUC.png" alt="Distribución de Frases Acusatorias" style="width: 500px; height: auto;" />
 </div>
 <div style="text-align: center;">
-  <img src="./images/TESIS_MC.png" alt="Distribución de Frases Acusatorias" style="width: 700px; height: auto;" />
+  <img src="./images/TESIS_MC.png" alt="Distribución de Frases Acusatorias" style="width: 1000px; height: auto;" />
 </div>
 
 ## CONCLUSIONES
