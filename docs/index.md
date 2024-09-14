@@ -232,7 +232,16 @@ El gráfico TSNE del modelo GRU muestra una estructura de agrupamiento similar a
   <img src="./images/GRU_TSNE.png" alt="Distribución de Frases Acusatorias" style="width: 500px; height: auto;" />
 </div>
 
-## RESULTAODS PREVIOS DE TESIS 
+## RESULTAODS PREVIOS DE TESIS CON PROMPTING Y LLAMA 3.1 8B
+<div style="text-align: center;">
+  <img src="./images/TESIS_REPORTE.png" alt="Distribución de Frases Acusatorias" style="width: 500px; height: auto;" />
+</div>
+<div style="text-align: center;">
+  <img src="./images/TESIS_ROCAUC.png" alt="Distribución de Frases Acusatorias" style="width: 500px; height: auto;" />
+</div>
+<div style="text-align: center;">
+  <img src="./images/TESIS_MC.png" alt="Distribución de Frases Acusatorias" style="width: 500px; height: auto;" />
+</div>
 
 ## CONCLUSIONES
 Rendimiento Deficiente de RNN: El modelo RNN mostró el peor desempeño, con una precisión extremadamente baja (0.03) para la clase "Acusatoria" y un F1-score general muy bajo para ambas clases. Esto indica que RNN no es adecuado para esta tarea, ya que tiene dificultades para distinguir entre las clases, con un accuracy total de solo 0.24.
