@@ -146,49 +146,91 @@ Precisión vs Época: En términos de precisión, el modelo GRU muestra una evol
 #### 1. RNN (Red Neuronal Recurrente Simple)
 Análisis: Los valores AUC para ambas clases están muy cerca del azar (0.5), lo que sugiere que el modelo RNN no está logrando discriminar de manera efectiva entre las clases acusatoria y no acusatoria. La curva ROC se mantiene bastante cerca de la diagonal aleatoria, indicando que el rendimiento del modelo es débil en esta tarea.
 
-####imagen####
+<div style="text-align: center;">
+  <img src="./images/RNN_ROCAUC.png" alt="Distribución de Frases Acusatorias" style="width: 500px; height: auto;" />
+</div>
 
 #### 2. LSTM (Long Short-Term Memory)
 Análisis: LSTM muestra una mejora notable en comparación con RNN, con un AUC de aproximadamente 0.74-0.75 para ambas clases. Esto indica que el modelo es capaz de distinguir mucho mejor entre las clases, y la curva ROC se aleja de la diagonal, evidenciando que el modelo ha capturado patrones útiles en los datos.
 
-####imagen####
+<div style="text-align: center;">
+  <img src="./images/LSTM_ROCAUC.png" alt="Distribución de Frases Acusatorias" style="width: 500px; height: auto;" />
+</div>
 
 #### 3. GRU (Gated Recurrent Unit)
 Análisis: El modelo GRU tiene un rendimiento muy similar al de LSTM, con un AUC de 0.73 para ambas clases. Esto sugiere que, al igual que LSTM, GRU es capaz de captar las dependencias secuenciales en los datos, y es casi igual de efectivo para esta tarea de clasificación.
 
-####imagen####
+<div style="text-align: center;">
+  <img src="./images/GRU_ROCAUC.png" alt="Distribución de Frases Acusatorias" style="width: 500px; height: auto;" />
+</div>
 
 ### Matriz de Consufión
 #### 1. RNN (Red Neuronal Recurrente Simple)
 Análisis: El modelo RNN presenta un alto número de falsos positivos, clasificando incorrectamente muchas muestras de la clase "No Acusatoria" como "Acusatoria". Solo logra detectar 24 casos verdaderos de "Acusatoria", lo cual es bastante bajo en comparación con los 758 errores. Esto indica que el modelo no está capturando correctamente las diferencias entre las dos clases.
 
-####imagen####
+<div style="display: flex; justify-content: space-around; align-items: center;">
+
+  <div style="text-align: center;">
+    <img src="./images/RNN_MC.png" alt="Imagen 1" style="width: 600px; height: auto;">
+  </div>
+
+  <div style="text-align: center;">
+    <img src="./images/RNN_MCP.png" alt="Imagen 2" style="width: 600px; height: auto;">
+  </div>
+
+</div>
 
 #### 2. LSTM (Long Short-Term Memory)
 Análisis: El modelo LSTM mejora significativamente en la detección de la clase "No Acusatoria", reduciendo el número de falsos positivos (de 758 a 92). Sin embargo, tiene un bajo rendimiento en la identificación de la clase "Acusatoria", detectando correctamente solo 6 casos y fallando en 23 (falsos negativos). A pesar de que es más preciso en "No Acusatoria", su capacidad para identificar casos de "Acusatoria" sigue siendo limitada.
 
-####imagen####
+<div style="display: flex; justify-content: space-around; align-items: center;">
+
+  <div style="text-align: center;">
+    <img src="./images/LSTM_MC.png" alt="Imagen 1" style="width: 600px; height: auto;">
+  </div>
+
+  <div style="text-align: center;">
+    <img src="./images/LSTM_MCP.png" alt="Imagen 2" style="width: 600px; height: auto;">
+  </div>
+
+</div>
 
 #### 3. GRU (Gated Recurrent Unit)
 Análisis: El modelo GRU ofrece un rendimiento muy similar al de LSTM en la detección de la clase "Acusatoria", con solo 6 verdaderos positivos y 23 falsos negativos. Sin embargo, GRU mejora aún más en la detección de la clase "No Acusatoria", con solo 22 falsos positivos, siendo el mejor en este aspecto entre los tres modelos. Esto sugiere que el modelo es bastante confiable en la predicción de "No Acusatoria", aunque su capacidad para identificar "Acusatoria" sigue siendo un desafío.
 
-####imagen####
+<div style="display: flex; justify-content: space-around; align-items: center;">
+
+  <div style="text-align: center;">
+    <img src="./images/GRU_MC.png" alt="Imagen 1" style="width: 600px; height: auto;">
+  </div>
+
+  <div style="text-align: center;">
+    <img src="./images/GRU_MCP.png" alt="Imagen 2" style="width: 600px; height: auto;">
+  </div>
+
+</div>
 
 ## Gráfico TSNE
 #### 1. RNN (Red Neuronal Recurrente Simple)
 En el gráfico TSNE del modelo RNN, se observa que las clases (0: No Acusatoria y 1: Acusatoria) no están claramente separadas. Las instancias de la clase 1 (Acusatoria) están dispersas entre las de la clase 0 (No Acusatoria), lo que sugiere que el modelo tiene dificultades para encontrar una representación latente que separe correctamente ambas clases. La falta de separación clara puede explicar el bajo rendimiento del modelo en las métricas de precisión y AUC.
 
-####imagen####
+<div style="text-align: center;">
+  <img src="./images/RNN_TSNE.png" alt="Distribución de Frases Acusatorias" style="width: 500px; height: auto;" />
+</div>
 
 #### 2. LSTM (Long Short-Term Memory)
 El gráfico TSNE del modelo LSTM muestra una mejora notable en la agrupación. Las instancias de la clase 0 (No Acusatoria) tienden a agruparse más en diferentes áreas del gráfico, mientras que las instancias de la clase 1 (Acusatoria) siguen dispersas, pero en menor medida. Hay un área clara en la parte superior izquierda del gráfico donde las instancias de la clase 1 están más concentradas, lo que indica que el modelo LSTM es capaz de capturar más patrones en las representaciones latentes, aunque todavía hay un margen para mejorar la separación de clases.
 
-####imagen####
+<div style="text-align: center;">
+  <img src="./images/LSTM_TSNE.png" alt="Distribución de Frases Acusatorias" style="width: 500px; height: auto;" />
+</div>
 
 #### 3. GRU (Gated Recurrent Unit)
 El gráfico TSNE del modelo GRU muestra una estructura de agrupamiento similar a la de LSTM, pero con una ligera mejora en la separación entre las clases. Las instancias de la clase 1 (Acusatoria) están algo mejor agrupadas, en particular en la parte izquierda del gráfico. Aunque todavía hay alguna superposición entre las clases, la separación es más clara en comparación con el modelo RNN. Esto respalda los mejores resultados que hemos visto en las métricas de precisión y AUC para el modelo GRU.
 
-####imagen####
+<div style="text-align: center;">
+  <img src="./images/GRU_TSNE.png" alt="Distribución de Frases Acusatorias" style="width: 500px; height: auto;" />
+</div>
 
 ## CONCLUSIONES
 Rendimiento Deficiente de RNN: El modelo RNN mostró el peor desempeño, con una precisión extremadamente baja (0.03) para la clase "Acusatoria" y un F1-score general muy bajo para ambas clases. Esto indica que RNN no es adecuado para esta tarea, ya que tiene dificultades para distinguir entre las clases, con un accuracy total de solo 0.24.
