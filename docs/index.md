@@ -12,8 +12,9 @@ Inicialmente, el conjunto de datos completo fue dividido en dos segmentos princi
 Dado el desequilibrio notable en la distribución de clases observado en el dataset, con una predominancia de frases no acusatorias, se implementó un proceso de aumento de datos para mejorar este desequilibrio. 
 
 <div style="text-align: center;">
-  <img src="./images/distriOriginal.png" alt="Distribución de Frases Acusatorias" style="max-width: 100%; height: auto;"/>
+  <img src="./images/distriOriginal.png" alt="Distribución de Frases Acusatorias" style="width: 500px; height: auto;" />
 </div>
+
 
 
 ####imagen####
