@@ -6,30 +6,32 @@ En el ámbito de las compras públicas en Ecuador, la fase de preguntas y respue
 El desafío principal radica en la capacidad de clasificar de manera eficiente y precisa estas preguntas en categorías de acusatorias y no acusatorias. Actualmente, la clasificación manual no solo es ineficiente, sino también susceptible a sesgos y errores. En este contexto, la aplicación de tecnologías avanzadas de procesamiento de lenguaje natural, específicamente el uso de modelos de lenguaje como RNN, LSTM o GRU, promete mejorar significativamente la precisión y la velocidad de esta clasificación .
 Este estudio propone el desarrollo de un sistema automatizado que utiliza las 3 tecnicas anteriores mencionadas para la clasificación textual y ChatGPT para la generación de datos de entrenamiento adicionales, con el objetivo de crear un modelo robusto capaz de discernir entre comentarios acusatorios y no acusatorios en el contexto de las licitaciones públicas. La implementación de tal sistema no solo podría mejorar la eficiencia del proceso de revisión de preguntas y respuestas, sino también fortalecer la transparencia y la equidad en las compras públicas .
 
-![image](https://github.com/user-attachments/assets/dc40e603-3728-4e27-a78f-2a9276bd55f2)
+## Augmento de datos
 
+Inicialmente, el conjunto de datos completo fue dividido en dos segmentos principales: un 80% (4004frases) destinado para el entrenamiento y un 20% (1001 frases) reservado para la prueba. Teniendo 3886 frases de la clase 'NO Acusatorio' y 118 frases de la clase 'Acusatoria'
+Dado el desequilibrio notable en la distribución de clases observado en el dataset, con una predominancia de frases no acusatorias, se implementó un proceso de aumento de datos para mejorar este desequilibrio. 
 
+####imagen####
 
-## Problem Statement
+Se utilizó un metodo de promting y el modelo GPT-4o-mini de OpenAI, generamos 5027 nuevas frases acusatorias. Este enfoque aumentó significativamente el número de frases acusatorias, ayudando a mejorar el entrenamiento del modelo.
+Después de aplicar el aumento de datos, se obtuvo un total de 9031 frases en total (3886 frases para la clase “No Acusatoria”, y 5145 frases para la clase “Acusatoria”).
 
-The goal of sending advertisement and offers to customers is to
-increase the customer purchases. However, it would be naive to send
-all offers to all customers at the same time. The goal of the project
-is to take advantage of the transactions and demographics data to
-determine the offers that should be targeted to different groups of
-customers.
+###imagen####
 
-## Datasets
+## Preprocesamiento de datos
+### 1. Tokenización
+Se realizó la tokenización del texto con el fin de segmentarlo en palabras individuales o "tokens". Para ello, se utilizó el método word_tokenize, el cual permite dividir cada frase en una secuencia de palabras. Adicionalmente, se convirtió todo el texto a minúsculas para normalizar las entradas y evitar que diferencias en el uso de mayúsculas introdujeran ruido en el procesamiento.
 
-The following data files have been provided and included in the project's [repo](https://github.com/aproano2/starbucks)
+### 2. Eliminación de Stop Words
+Se procedió a eliminar las stop words del texto, que son palabras funcionales de alta frecuencia que no aportan información significativa para el análisis de contenido. El conjunto de stop words utilizado fue el proporcionado por la biblioteca NLTK en español. Este paso es crucial para reducir el volumen de información irrelevante y optimizar el desempeño del modelo, dado que palabras como "el", "de", y "y" no contribuyen significativamente a la comprensión semántica del texto.
 
-- `portfolio.json` contains the details of each offer: duration, reward, type, etc
-- `profile.json` contains demographic information of customer
-- `transcript.json` contains all customers activity: transactions, offers received, offers viewed, and offers completed.
+### 3. Stemming (Raíces de Palabras)
+Para reducir las palabras a su forma raíz, se aplicó la técnica de stemming mediante el uso del algoritmo de Porter (PorterStemmer). Este proceso permitió reducir variaciones morfológicas de una palabra a una raíz común, facilitando el tratamiento de palabras con formas flexionadas de manera uniforme. Aunque el stemming puede generar raíces no léxicas, su uso es útil para reducir la dimensionalidad del vocabulario sin perder generalidad en las palabras claves.
 
-The datasets were cleaned and merged in a way that each row includes
-customers activity, customers demographics and offers metadata.
+### 4. Lematización
+Se aplicó la lematización para transformar las palabras en su forma base o lema, utilizando el algoritmo WordNetLemmatizer. A diferencia del stemming, este método asegura que las palabras se conviertan a una forma válida en el idioma, mejorando la precisión en comparación con el simple recorte de sufijos. La lematización permite conservar el significado completo de las palabras, lo que es fundamental cuando se trabaja con textos que requieren análisis semántico más detallado.
 
+###imagen###ig¿magen###
 
 ## Data Analysis
 
