@@ -11,8 +11,8 @@ Este estudio propone el desarrollo de un sistema automatizado que utiliza las 3 
 Inicialmente, el conjunto de datos completo fue dividido en dos segmentos principales: un 80% (4004frases) destinado para el entrenamiento y un 20% (1001 frases) reservado para la prueba. Teniendo 3886 frases de la clase 'NO Acusatorio' y 118 frases de la clase 'Acusatoria'
 Dado el desequilibrio notable en la distribución de clases observado en el dataset, con una predominancia de frases no acusatorias, se implementó un proceso de aumento de datos para mejorar este desequilibrio. 
 
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-  <img src="./images/distriOriginal.png" alt="Imagen" style="width: 500px; height: auto;" />
+<div style="text-align: center;">
+  <img src="./images/distriOriginal.png" alt="Distribución de Frases Acusatorias" style="max-width: 100%; height: auto;"/>
 </div>
 
 
