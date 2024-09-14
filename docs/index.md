@@ -33,6 +33,28 @@ Se aplicó la lematización para transformar las palabras en su forma base o lem
 
 ###imagen###ig¿magen###
 
+## Entrenamiento
+### RNN
+#### 1. Definición de la Arquitectura RNN
+Se implementó una red neuronal recurrente (RNN) denominada SentimentRNN, con el propósito de capturar las dependencias secuenciales en las representaciones de texto para el análisis de sentimientos. La arquitectura incluye una capa de embeddings (nn.Embedding), que mapea cada palabra en un vector de dimensión fija, seguido de una capa recurrente simple (nn.RNN) que modela la relación entre palabras en secuencias. La capa final es una capa totalmente conectada (nn.Linear) que convierte la última salida de la secuencia en una predicción sobre las dos clases de salida: acusatoria o no acusatoria. Esta configuración permite que el modelo aprenda patrones temporales en las secuencias de texto, lo cual es fundamental en el procesamiento de lenguaje natural.
+
+#### 2. Entrenamiento del Modelo
+El proceso de entrenamiento del modelo SentimentRNN se realizó utilizando el optimizador Adam (optim.Adam), conocido por su capacidad de ajustarse dinámicamente a diferentes magnitudes de gradiente, con una tasa de aprendizaje inicial de 0.001. La función de pérdida seleccionada fue la CrossEntropyLoss, adecuada para problemas de clasificación multiclase. A lo largo de 50 épocas, se registraron tanto la pérdida promedio como la precisión macro-promediada (MulticlassAccuracy), evaluada sobre el conjunto de entrenamiento. Esta métrica proporcionó una visión balanceada del desempeño del modelo al considerar ambas clases de manera equitativa.
+
+### LSTM
+#### 1. Definición de la Arquitectura LSTM
+Se implementó un modelo de red neuronal recurrente con Long Short-Term Memory (LSTM), denominado SentimentLSTM, con el objetivo de modelar las relaciones secuenciales entre palabras en el contexto del análisis de sentimientos. La arquitectura consta de tres componentes principales: una capa de embeddings (nn.Embedding) que transforma las palabras en vectores de representación continua, una capa LSTM (nn.LSTM) que captura dependencias a largo plazo en las secuencias, y una capa totalmente conectada (nn.Linear) que mapea la salida de la LSTM a las clases de predicción (acusatoria o no acusatoria). La salida final se obtiene tomando el último estado oculto de la secuencia, lo que permite que el modelo integre información de toda la secuencia antes de generar una predicción.
+
+#### 2. Entrenamiento del Modelo
+El entrenamiento del modelo SentimentLSTM se llevó a cabo utilizando el optimizador Adam (optim.Adam), con una tasa de aprendizaje de 0.001. Se empleó la función de pérdida CrossEntropyLoss, adecuada para la clasificación multiclase. El proceso de entrenamiento incluyó 50 épocas, durante las cuales se midió tanto la pérdida media como la precisión macro-promediada a nivel de cada época. Se utilizó la métrica MulticlassAccuracy para calcular la precisión general del modelo en la tarea de clasificación binaria, brindando una visión equilibrada del rendimiento en ambas clases (acusatoria y no acusatoria).
+
+### GRU
+#### 1. Definición de la Arquitectura GRU
+Se diseñó un modelo de red neuronal recurrente basado en Gated Recurrent Units (GRU), denominado SentimentGRU, con el fin de capturar las dependencias temporales en el texto para el análisis de sentimientos. La arquitectura del modelo incluye una capa de embeddings (nn.Embedding) para transformar cada palabra en una representación vectorial, una capa GRU (nn.GRU) que modela la información secuencial en las frases, y una capa totalmente conectada (nn.Linear) que genera la predicción final. Al igual que en otros modelos recurrentes, la última salida de la secuencia se toma como representación final para realizar la clasificación, permitiendo al modelo aprender las dependencias a lo largo de toda la secuencia de texto.
+
+#### 2. Entrenamiento del Modelo
+El entrenamiento del modelo SentimentGRU se llevó a cabo utilizando el optimizador Adam (optim.Adam), con una tasa de aprendizaje inicial de 0.001, y la función de pérdida CrossEntropyLoss, optimizada para tareas de clasificación multiclase. Durante el proceso de entrenamiento, que abarcó 50 épocas, se calcularon tanto la pérdida como la precisión en cada iteración. La precisión fue medida mediante la métrica MulticlassAccuracy para proporcionar una visión global del rendimiento del modelo sobre las dos clases objetivo (acusatoria y no acusatoria). Este enfoque permitió un seguimiento detallado del progreso del modelo en la tarea de clasificación binaria.
+
 ## Data Analysis
 
 ### Population
