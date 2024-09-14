@@ -15,14 +15,12 @@ Dado el desequilibrio notable en la distribución de clases observado en el data
   <img src="./images/distriOriginal.png" alt="Distribución de Frases Acusatorias" style="width: 500px; height: auto;" />
 </div>
 
-
-
-####imagen####
-
 Se utilizó un metodo de promting y el modelo GPT-4o-mini de OpenAI, generamos 5027 nuevas frases acusatorias. Este enfoque aumentó significativamente el número de frases acusatorias, ayudando a mejorar el entrenamiento del modelo.
 Después de aplicar el aumento de datos, se obtuvo un total de 9031 frases en total (3886 frases para la clase “No Acusatoria”, y 5145 frases para la clase “Acusatoria”).
 
-###imagen####
+<div style="text-align: center;">
+  <img src="./images/distriDA.png" alt="Distribución de Frases Acusatorias" style="width: 500px; height: auto;" />
+</div>
 
 ## Preprocesamiento de datos
 ### 1. Tokenización
@@ -37,7 +35,20 @@ Para reducir las palabras a su forma raíz, se aplicó la técnica de stemming m
 ### 4. Lematización
 Se aplicó la lematización para transformar las palabras en su forma base o lema, utilizando el algoritmo WordNetLemmatizer. A diferencia del stemming, este método asegura que las palabras se conviertan a una forma válida en el idioma, mejorando la precisión en comparación con el simple recorte de sufijos. La lematización permite conservar el significado completo de las palabras, lo que es fundamental cuando se trabaja con textos que requieren análisis semántico más detallado.
 
-###imagen###ig¿magen###
+<div style="display: flex; justify-content: space-around; align-items: center;">
+
+  <div style="text-align: center;">
+    <p>Conjunto de entrenamiento original</p>
+    <img src="./images/nubeOriginal.png" alt="Imagen 1" style="width: 300px; height: auto;">
+  </div>
+
+  <div style="text-align: center;">
+    <p>Conjunto de entrenamiento pre-procesado</p>
+    <img src="./images/nubePrepo.png" alt="Imagen 2" style="width: 300px; height: auto;">
+  </div>
+
+</div>
+
 
 ## Entrenamiento
 ### RNN
