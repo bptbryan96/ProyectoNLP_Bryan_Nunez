@@ -1,3 +1,5 @@
-remote_theme: pages-themes/time-machine@v0.2.0
+remote_theme: pages-themes/hacker@v0.2.0
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
+title: [Proyecto final de NLP]
+description: [La presente pagina muestra los detalles del proyecto final de la clase NLP de la maestría en inteligencia artificial de la USFQ]
